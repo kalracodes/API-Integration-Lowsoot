@@ -1,0 +1,48 @@
+html {
+    font-family: sans-serif;
+}
+
+
+button {
+    font: inherit;
+    background: #5102ac;
+    border: 1px solid #5102ac;
+    color: white;
+    cursor: pointer;
+    margin-right: 3rem;
+    padding: 1.25rem 2.5rem;
+    font-size: 1.5rem;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover,
+button:active {
+    background: #832ee4;
+    border-color: #832ee4;
+}
+#control{
+    display:flex;
+    flex-direction: column;
+}
+#control input{
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+#control-center {
+    display:flex;
+    flex-direction:row;
+    border: 2px solid #ccc;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+#dom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}

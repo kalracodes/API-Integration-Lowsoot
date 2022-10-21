@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="automate_quickemail.js" defer></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <section id="control-center">
+        <section id="control">
+            <input type="file" accept=".csv" id="demoPick" multiple>
+            <input type="text" name="file-name" id="file-name" placeholder = "File Name">
+            <input type="number" name="array-len" id="array-len" placeholder = 'Number of contacts in each file'>
+        </section>
+        <button id="get-btn">Verify Leads</button>
+        <button id="check-len">Total Safe to send files</button>
+        <button id="push-btn">Save files to Computer</button>
+    </section>
+    <div id="dom"></div>
+
+</html>
