@@ -137,7 +137,7 @@ function getData() {
     for (let i = 0; i < array.length; i++) {
         abc = array[i]
         var settings = {
-            "Access-Control-Allow-Origin":"https://quickemail-api-lowsoot.netlify.app",
+            "Access-Control-Allow-Origin":"*",
             "url": "https://api.quickemailverification.com/v1/verify?email=" + abc["Email"] + "&apikey=" + api_key_quickemail,
             "timeout": 0,
             "methods": "GET",
