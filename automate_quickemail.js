@@ -16,16 +16,18 @@ let len = -1;
 
 function removeDuplicates(arr) {
     var unique = [];
-    var emails = [];
-        arr.forEach(element => {
-            if (element["Email"].indexOf('@')==-1) {
+    console.log(arr)
+    arr.forEach(element => {
+        if (element.Email == undefined) {
+            console.log(element.Email);
+        } else {
+            console.log(element.Email);
+            if (element.Email.lastIndexOf('@') == -1) {} else {
+                unique.push([element["First Name"], element["Last Name"], element["Title"], element["Company"], element["Email"], element["Person Linkedin Url"]]);
             }
-            else if (!emails.includes(element["Email"])) {
-                unique.push(element);
-                emails.push(element["Email"]);
-            }
-        });
-        return unique;
+        }
+    });
+    return unique;
 }
 
 file_na.onchange = () => {
@@ -134,6 +136,7 @@ function pushData() {
 }
 
 function getData() {
+    dom("This process takes a mintue so settle down and don't hurry");
     for (let i = 0; i < array.length; i++) {
         abc = array[i]
         var settings = {
@@ -160,7 +163,7 @@ function readmultifiles(files) {
     function readFile(index) {
         if (index >= files.length) {
             array = removeDuplicates(array);
-            dom('Unique elements: '+array.length);
+            dom('Unique elements: ' + array.length);
             console.log(array);
             return;
         }
