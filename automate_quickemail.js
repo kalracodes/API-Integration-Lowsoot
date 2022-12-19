@@ -16,12 +16,12 @@ let len = -1;
 
 function removeDuplicates(arr) {
     var unique = [];
-    console.log(arr)
+    // console.log(arr)
     arr.forEach(element => {
         if (element.Email == undefined) {
             console.log(element.Email);
         } else {
-            console.log(element.Email);
+            // console.log(element.Email);
             if (element.Email.lastIndexOf('@') == -1) {} else {
                 unique.push([element["First Name"], element["Last Name"], element["Title"], element["Company"], element["Email"], element["Person Linkedin Url"]]);
             }
@@ -55,7 +55,7 @@ function spliting(str) {
         delimiter = ',',
         flag = 0,
         word = "";
-    for (i = 0; i <= str.length; i++) {
+    for (i = 0; i < str.length; i++) {
         if (str[i] == `"`) {
             if (flag == 0) {
                 flag = 1;
@@ -72,6 +72,7 @@ function spliting(str) {
             word += str[i];
         }
     }
+    splitStrings.push(word.trim("\r"));
     return splitStrings;
 }
 
@@ -139,9 +140,10 @@ function getData() {
     dom("This process takes a mintue so settle down and don't hurry");
     for (let i = 0; i < array.length; i++) {
         abc = array[i]
+        console.log(abc)
         var settings = {
             "Access-Control-Allow-Origin":"*",
-            "url": "https://api.quickemailverification.com/v1/verify?email=" + abc["Email"] + "&apikey=" + api_key_quickemail,
+            "url": "https://api.quickemailverification.com/v1/verify?email=" + abc[4] + "&apikey=" + api_key_quickemail,
             "timeout": 0,
             "methods": "GET",
         };
@@ -149,7 +151,7 @@ function getData() {
             console.log(response);
             abc = array[i]
             if (response.safe_to_send == "true") {
-                arraydata.push([abc["First Name"], abc["Last Name"], abc["Title"], abc["Company"], abc["Email"], abc["Person Linkedin Url"]]);
+                arraydata.push([abc[0], abc[1], abc[2], abc[3], abc[4], abc[5]]);
             }
         });
     }
